@@ -8,7 +8,7 @@
 <body>
     <h1>Прямой эфир через FFmpeg</h1>
     <audio id="audio-player" controls autoplay>
-        <!-- Замените URL потока на URL, который будет создан командой ffmpeg -->
+        <!-- Убедитесь, что URL потока соответствует вашему Icecast -->
         <source src="http://ffmpeg.indexmod.xyz/stream" type="audio/mp3">
         Ваш браузер не поддерживает элемент audio.
     </audio>
@@ -16,6 +16,7 @@
     <script>
         const audio = document.getElementById('audio-player');
         audio.addEventListener('error', () => {
+            alert("Проблема с подключением к потоку FFmpeg. Пожалуйста, проверьте, работает ли поток.");
             console.log("Проблема с подключением к потоку FFmpeg.");
         });
     </script>
